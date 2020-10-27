@@ -9,5 +9,21 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    #############################
+    #Players API#
+    #############################
+    field :player, resolver: Players::PlayerResolver
+    field :players, resolver: Players::PlayersResolver
+    
+    #############################
+    #Injury API
+    ############################
+    field :injuries, resolver: Injuries::InjuryResolver
+
+    #############################
+    #Team API
+    #############################
+    field :teams, resolver: Teams::TeamResolver
   end
 end
