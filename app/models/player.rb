@@ -15,4 +15,9 @@
 class Player < ApplicationRecord
   has_many :injuries
   belongs_to :team
+
+  def calculateTimeInLeague(birthday)
+    league_time = Date.today.year - birthday.year
+  end
+
 end
