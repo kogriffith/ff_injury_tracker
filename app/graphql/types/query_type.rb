@@ -19,11 +19,11 @@ module Types
     #############################
     #Injury API
     ############################
-    field :injuries, resolver: Injuries::InjuryResolver
+    #field :injuries, resolver: Injuries::InjuryResolver
 
     #############################
     #Team API
     #############################
-    field :teams, resolver: Teams::TeamResolver
+    field :team, resolver: Teams::TeamResolver
   end
 end
