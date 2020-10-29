@@ -13,17 +13,21 @@ module Types
     #############################
     #Players API#
     #############################
+
     field :player, resolver: Players::PlayerResolver
     field :players, resolver: Players::PlayersResolver
     
     #############################
     #Injury API
     ############################
-    #field :injuries, resolver: Injuries::InjuryResolver
 
+    field :injury, resolver: Injuries::InjuryResolver
+    field :injuries, resolver: Injuries::InjuriesResolver
+    
     #############################
     #Team API
     #############################
+    
     field :team, resolver: Teams::TeamResolver
   end
 end
