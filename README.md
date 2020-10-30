@@ -1,24 +1,5 @@
-# README
+# NFL Player Injury Tracking Web App 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WIP. My goal here is to allow a user to search and find a player by either their name or team, and get primarily that player's entire professional and collegiate injury history, with each injury having detailed statistics about the nature of the injury. Some basic stats about each player will also be provided.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Built with Rails, React, Apollo, GraphQL, and postgresql
