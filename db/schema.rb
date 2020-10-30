@@ -10,30 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_224728) do
+ActiveRecord::Schema.define(version: 2020_10_29_200106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "conferences", force: :cascade do |t|
-    t.string "name", null: false
-  end
-
-  create_table "divisions", force: :cascade do |t|
-    t.bigint "conference_id"
-    t.string "name", null: false
-    t.index ["conference_id"], name: "index_divisions_on_conference_id"
-  end
 
   create_table "injuries", force: :cascade do |t|
     t.bigint "player_id"
     t.string "name", null: false
     t.string "body_location", null: false
-    t.string "type", null: false
+    t.string "injury_type", null: false
     t.string "severity", null: false
     t.date "occured", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "turf_type"
+    t.integer "expected_recovery_time"
+    t.boolean "contact"
     t.index ["player_id"], name: "index_injuries_on_player_id"
   end
 
@@ -46,13 +39,16 @@ ActiveRecord::Schema.define(version: 2020_10_27_224728) do
     t.integer "time_in_league", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "conference"
+    t.string "division"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
-    t.bigint "division_id"
     t.string "name", null: false
-    t.index ["division_id"], name: "index_teams_on_division_id"
+    t.string "conference"
+    t.string "division"
+    t.string "abbreviation"
   end
 
 end
